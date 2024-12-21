@@ -19,23 +19,45 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-  margin: 0 10px 0 0;
-  display: flex;
-  margin-bottom: 10px;
+  color: var(--link-color);
+  text-decoration: none;
+  display: inline-flex; /* Better alignment control */
+  margin: 0 10px 10px 0;
+  padding: 5px;
+  box-shadow: 20px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: color 0.3s, border-color 0.3s;
 }
 
 a:hover {
-  color: #535bf2;
+  color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
 }
 
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #111010;
+  color: rgba(255, 255, 255, 0.87);
+  background-size: 120px 120px;
+  background-image:
+    linear-gradient(to right, grey .2px, transparent 1px),
+    linear-gradient(to bottom, grey .2px, transparent 1px);
+}
+
+.home {
+  border: 3px solid transparent; /* Base border */
+  box-shadow: 0 0 20px white; /* Adjusted for a glow effect */
+  padding: 24px; /* Added padding for spacing */
+  margin: 40px 20px 40px 20px; /* Centering and margin adjustments */
+  max-width: 1200px; /* Constrain the layout width */
+  border-radius: 8px; /* Smooth edges */
+  background-color: #242424; /* Ensures consistency */
 }
 
 h1 {
@@ -43,6 +65,68 @@ h1 {
   line-height: 1.1;
   margin: 5px;
 }
+
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffdd57;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #80b3ff;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #ffdd57;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ffdd57;
+  display: inline-block;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin: 0.5rem 0;
+}
+
+.secondary a {
+  color: #80b3ff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.secondary a:hover {
+  color: #ffdd57;
+}
+
+
+.projects {
+  margin-top: 2rem;
+  text-align: center;
+  color: #80b3ff;
+}
+
+.projects p {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
 
 button {
   border-radius: 8px;
@@ -61,4 +145,12 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+@media (max-width: 768px) {
+ h1 {
+  font-size: 2.5rem;
+ } 
+
 }
