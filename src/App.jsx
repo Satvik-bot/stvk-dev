@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import {FiAlertCircle, FiLinkedin, FiTwitter} from "react-icons/fi"
+import { ImNewTab } from "react-icons/im";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <div className="main">
         <h1>Satvik Sagar Sharma</h1>
         <p>
-          Software Engineer <a href="https://www.airbus.com/en"> @Airbus </a>
+          Software Engineer <a rel="nofollow"  target="_blank" href="https://www.airbus.com/en"> @Airbus .<ImNewTab></ImNewTab> </a>
         </p>
         <p>Currently learning "xyz"</p>
         <p>
@@ -29,7 +30,6 @@ function App() {
           target="_blank"
           title="Twitter"
         >
-          <i class="fa fa-twitter fa-2x"></i>
           <FiTwitter></FiTwitter>
         </a>
       </div>
