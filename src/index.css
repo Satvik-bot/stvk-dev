@@ -1,156 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: "Doto", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  --background: #111111;
+  --text: #E2E8F0;
+  --text-secondary: rgba(226, 232, 240, 0.85);
+  --primary: #9333EA;
+  --secondary: #1a1a1a;
 }
 
-a {
-  font-weight: 500;
-  color: var(--link-color);
-  text-decoration: none;
-  display: inline-flex; /* Better alignment control */
-  margin: 0 10px 10px 0;
-  padding: 5px;
-  box-shadow: 20px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  transition: color 0.3s, border-color 0.3s;
+@layer base {
+  ::selection {
+    @apply bg-purple-600/30 text-purple-200;
+  }
+
+  body {
+    @apply min-h-screen text-lg;
+    background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+    background-attachment: fixed;
+    color: var(--text);
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-purple-500 mb-3;
+  }
+
+  h2.role-title {
+    @apply text-xl md:text-2xl font-medium text-purple-100 mb-4;
+  }
+
+  .hero-description {
+    @apply text-base text-purple-100/90 max-w-2xl leading-relaxed;
+  }
 }
 
-a:hover {
-  color: var(--link-hover-color);
-  border-color: var(--link-hover-color);
+@layer components {
+  .hero-section {
+    @apply min-h-[70vh] flex flex-col justify-center relative pb-8;
+    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.1), transparent 50%);
+  }
+
+  .scroll-indicator {
+    @apply absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-purple-400/50;
+  }
+
+  .section-heading {
+    @apply text-3xl font-bold text-purple-100 mb-12 relative;
+  }
+
+  .section-heading::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-24 h-1 bg-purple-500/50 -mb-4;
+  }
+
+  .project-card {
+    @apply bg-neutral-900/50 rounded-xl p-6 border border-purple-900/20 backdrop-blur-md;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    @apply border-purple-500/20 -translate-y-1 bg-neutral-900/70;
+    box-shadow: 0 4px 20px rgba(147, 51, 234, 0.15);
+  }
+
+  .project-title {
+    @apply text-2xl font-bold text-purple-100 mb-3;
+  }
+
+  .project-description {
+    @apply text-purple-200/80 leading-relaxed mb-6;
+  }
+
+  .social-links-container {
+    @apply flex gap-6 mt-6 items-center;
+  }
+
+  .social-link {
+    @apply p-3 rounded-full;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .social-link:hover {
+    @apply bg-purple-900/30;
+    transform: translateY(-2px);
+  }
+
+  .social-link svg {
+    @apply w-6 h-6 text-purple-200;
+    transition: color 0.2s ease;
+  }
+
+  .social-link:hover svg {
+    @apply text-purple-500;
+  }
+
+  .tech-tag {
+    @apply px-4 py-2 rounded-lg bg-purple-900/20 text-sm font-medium text-purple-200 
+           border border-purple-800/20;
+    transition: all 0.2s ease;
+  }
+
+  .tech-tag:hover {
+    @apply bg-purple-900/30 text-purple-400;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(147, 51, 234, 0.1);
+  }
+
+  .skills-container {
+    @apply grid gap-12;
+  }
+
+  .skill-category {
+    @apply text-xl font-semibold text-purple-400/80 mb-4 capitalize;
+  }
+
+  .footer {
+    @apply mt-24 py-8 px-4 border-t border-purple-900/20;
+    background: rgba(17, 17, 17, 0.4);
+  }
+
+  .footer-content {
+    @apply container mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-purple-200/70;
+  }
+
+  .footer-tech {
+    @apply flex items-center gap-2;
+  }
+
+  .footer-tech span {
+    @apply text-purple-400;
+  }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #111010;
-  color: rgba(255, 255, 255, 0.87);
-  background-size: 120px 120px;
-  background-image:
-    linear-gradient(to right, grey .2px, transparent 1px),
-    linear-gradient(to bottom, grey .2px, transparent 1px);
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(226, 232, 240, 0.1) 1px, transparent 0);
+    background-size: 32px 32px;
+    background-position: -19px -19px;
+  }
 }
 
-.home {
-  border: 3px solid transparent; /* Base border */
-  box-shadow: 0 0 20px white; /* Adjusted for a glow effect */
-  padding: 24px; /* Added padding for spacing */
-  margin: 40px 20px 40px 20px; /* Centering and margin adjustments */
-  max-width: 1200px; /* Constrain the layout width */
-  border-radius: 8px; /* Smooth edges */
-  background-color: #242424; /* Ensures consistency */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  margin: 5px;
-}
-
-
-.title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffdd57;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #80b3ff;
-  margin-bottom: 1.5rem;
-}
-
-.description {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  text-align: justify;
-}
-
-.section-title {
-  font-size: 1.5rem;
-  color: #ffdd57;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #ffdd57;
-  display: inline-block;
-}
-
-.skills-list {
-  list-style: none;
-  padding: 0;
-}
-
-.skills-list li {
-  margin: 0.5rem 0;
-}
-
-.secondary a {
-  color: #80b3ff;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-}
-
-.secondary a:hover {
-  color: #ffdd57;
-}
-
-
-.projects {
-  margin-top: 2rem;
-  text-align: center;
-  color: #80b3ff;
-}
-
-.projects p {
-  font-size: 1rem;
-  color: #e0e0e0;
-}
-
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-
-@media (max-width: 768px) {
- h1 {
-  font-size: 2.5rem;
- } 
-
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
 }
