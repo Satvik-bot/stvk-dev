@@ -120,19 +120,16 @@ function About() {
             title: "Groovy Shared Library",
             description: "Standardized CI/CD pipeline library supporting 7+ desktop applications, improving delivery efficiency and reducing deployment failures by 20%.",
             tech: ["Groovy", "Jenkins", "SonarQube"],
-            link: "https://github.com/satvik-bot/groovy-shared-lib"
         },
         {
             title: "Engineering Process Automation Tool",
             description: "Developed a critical automation tool for aircraft systems integration workflow, reducing process execution time by 20% and improving reliability with 80% fewer reported issues.",
             tech: ["Python", "RHEL7", "Process Automation"],
-            link: "https://github.com/satvik-bot/process-automation"
         },
         {
             title: "Crypto Tracker",
             description: "ReactJS web app tracking 1000+ cryptocurrencies with real-time data and interactive visualizations using CoinGecko API.",
             tech: ["React", "MaterialUI", "ChartJS"],
-            link: "https://github.com/satvik-bot/crypto-tracker"
         }
     ];
 
